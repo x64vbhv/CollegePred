@@ -276,8 +276,7 @@
         };
 
 
-        // thanks to Tushar ;)
-        let query = `SELECT * FROM "${selectedTable}" WHERE CAST("Closing Rank" AS INTEGER) >= ?`;
+        let query = `SELECT * FROM "${selectedTable}" WHERE ? BETWEEN "Opening Rank" AND "Closing Rank"`;
         const params = [rank];
 
         for (const [key, value] of Object.entries(filters)) {
