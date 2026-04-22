@@ -170,7 +170,7 @@
       });
 
       // Load and decompress DB - UPDATED URL
-      const response = await fetch("https://raw.githubusercontent.com/x64vbhv/CollegePred/main/2025.db.gz);
+      const response = await fetch("https://raw.githubusercontent.com/x64vbhv/CollegePred/main/2025.db.gz");
       const compressed = new Uint8Array(await response.arrayBuffer());
       const decompressed = new Uint8Array(pako.ungzip(compressed));
       const db = new SQL.Database(decompressed);
